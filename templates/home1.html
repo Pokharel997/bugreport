@@ -1,0 +1,80 @@
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <!link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!--Header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">BugsPredict</a>
+            </div>
+
+            <!--Items -->
+            <div class="collapse navbar-collapse" id="topNavBar">
+                <ul class="nav navbar-nav">
+                    <li class="">
+                        <a href="/train">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Train
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/home">
+                            <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>&nbsp; Predict
+                        </a>
+                    </li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a href="/dataset">
+                            <span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp; Dataset
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/about">
+                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>&nbsp; About Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!DOCTYPE html>
+<body>
+        {% load staticfiles %}
+	<div>
+		<div class="row">
+   			<div class="col m5">
+    			<div class="card blue-text text-darken-2">
+    			   <div class="card-image">
+    	            <img src="{% static 'bug1.png' %}" style= "opacity: 0.6;" height="350px" width="100px"/>
+    	            </div
+        			 <div class="card-content white-text">
+          				<span class="card-title"><strong><u>&nbsp;Bug report</u></strong></span>
+          					&nbsp;&nbsp;&nbsp; {% for x in var %}
+        					<h6><p>&nbsp;{{ x }}</p></h6>
+        					{% endfor %}
+        			</div>
+        			<div class="card-action">
+        				<a href="#">link</a>
+        			</div>
+      			</div>
+    		</div>
+  		</div>
+  	</div>
+</body>

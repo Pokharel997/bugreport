@@ -1,0 +1,62 @@
+
+ {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <!link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!--Header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">BugsPredict</a>
+            </div>
+
+            <!--Items -->
+            <div class="collapse navbar-collapse" id="topNavBar">
+                <ul class="nav navbar-nav">
+                    <li class="">
+                        <a href="{% url 'trained' %}">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Train
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="/home">
+                            <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>&nbsp; Predict
+                        </a>
+                    </li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a href="/dataset">
+                            <span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp; Dataset
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/about">
+                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>&nbsp; About Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Congratulation !!</title>
+</head>
+<body>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Congratulation !!</strong> python: model already trained</h3>
+
+</body>
+</html>

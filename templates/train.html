@@ -1,0 +1,139 @@
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <!link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!--Header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">BugsPredict</a>
+            </div>
+
+            <!--Items -->
+            <div class="collapse navbar-collapse" id="topNavBar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="/train">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Train
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="{% url 'home' %}">
+                            <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>&nbsp; Predict
+                        </a>
+                    </li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a href="{% url 'dataset' %}">
+                            <span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp; Dataset
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="{% url 'about' %}">
+                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>&nbsp; About Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Train</title>
+</head>
+<style>
+#myProgress {
+    margin-top: 50px;
+    margin-bottom: 5px;
+    margin-right: 200px;
+    margin-left: 300px;
+  width: 50%;
+  background-color: #ddd;
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#myButton {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-right: 200px;
+    margin-left: 600px;
+    display: block;
+}
+
+#content{
+    display:none;
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+    text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
+<body>
+
+<h1><strong>Train the Classifiers:</strong></h1>
+<h3><strong>1. Bootstrap aggregating (Bagging)</strong></h3>
+<h3><strong>1. Naive Bayes Classifier</strong></h3>
+<h3><strong>2. Logistic Regression</strong></h3>
+<h3><strong>3. Stochastic Gradient Descent Classifier</strong></h3>
+
+
+<div id="myProgress" >
+  <div id="myBar">0%</div>
+</div>
+
+<br>
+<div id="myButton">
+    <button onclick="move()" class="button">Train</button>
+</div>
+<div id="content"><h3><strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Classifier Trained Successfully.</strong></h3></div>
+
+<script>
+function move() {
+  var elem = document.getElementById("myBar");
+  var width = 10;
+  var id = setInterval(frame, 50);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+      document.getElementById('content').style.display='block';
+      document.getElementById('myButton').style.display='none';
+    } else {
+      width++;
+      elem.style.width = width + '%';
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
